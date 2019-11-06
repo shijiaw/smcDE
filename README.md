@@ -4,7 +4,7 @@ An R package described in our manuscript ``Adaptive semiparametric Bayesian diff
 - data: a list with each element being a trajectory with measurement error
 - times: a list with each element being the time we record data
 - seed: the random seeds for propagation and resampling in SMC
-- knotsPosition: the location we put knots
+- knots: the location we put knots
 - NP: the number of particles in SMC
 - CESSthresholds relative conditional effective sample size (0, 1) in SMC
 - resampleThreshold: the threshold triggering resampling in SMC
