@@ -35,3 +35,7 @@ Output
 - lambda: particles for tuning parameter lambda. 
 - sigma: particles for sigma.
 - W: normalized weights for particles.
+
+Demo
+-----
+We refer users to Folder `Demo' for examples. 
