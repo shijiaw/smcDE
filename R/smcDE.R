@@ -1247,7 +1247,7 @@ smcDE <- function(data, times, seed, knots, CESSthresholds, NP, resampleThreshol
     output <- DE3(data, times, seed, knots, CESSthresholds, NP, resampleThreshold, alambda, blambda, sigmac)
   }
 
-  return(list(c1 = output$c1, c2 = output$c2, parameters = output$parameters, lambda = output$lambda, sigma = output$sigma, W = output$W))
+  return(list(c = list(c1 = output$c1, c2 = output$c2), parameters = output$parameters, lambda = output$lambda, sigma = output$sigma, W = output$W))
 }
 
 
