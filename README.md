@@ -1,5 +1,10 @@
 # smcDE
-An R package described in our manuscript ``Adaptive semiparametric Bayesian differential equations via sequential Monte Carlo methods''
+
+Summary
+-------
+smcDE is an R package is a recently proposed method for estimating parameters in differential equations. The differential equations are solved via collocation, and inference are made by developed sequential Monte Carlo algorithm based on constructed fully Bayesian scheme. 
+
+
 
 Installation
 ------------
