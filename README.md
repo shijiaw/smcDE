@@ -32,5 +32,6 @@ Output
 -----
 - c: a list of particles for basis coefficient (c1 and c2).
 - parameter: particles for model parameters.
+- lambda: particles for tuning parameter lambda. 
 - sigma: particles for sigma.
 - W: normalized weights for particles.
