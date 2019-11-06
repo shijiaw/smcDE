@@ -10,11 +10,7 @@
 #' @param blambda hyper-parameter for tuning parameter lambda
 #' @param sigmac the standard deviation of the basis coefficients c
 #' @param DEmodel options for DE models: 1 (ODE), 2 (DDE1), 3 (DDE2) in manuscript
-#' @export c a matrix of NP particles for basis coefficients
-#' @export parameters a matrix of NP particles for parameters in DE system
-#' @export lambda particles for tuning parameter lambda
-#' @export sigma variance of measurement error
-#' @export W normalized weights for particles (without resampling)
+#' @export 
 
 smcDE <- function(data, times, seed, knots, CESSthresholds, NP, resampleThreshold, alambda, blambda, sigmac, DEmodel){
   # check.packages function: install and load multiple R packages.
