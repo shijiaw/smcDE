@@ -2,7 +2,7 @@
 
 Summary
 -------
-smcDE is an R package for a recently proposed method for estimating parameters in differential equations. The differential equations are solved via collocation, and inference are made by developed sequential Monte Carlo algorithm based on constructed fully Bayesian scheme. 
+smcDE is an R package of a recently proposed method  for estimating parameters in differential equations. The differential equations are solved via collocation, and inference are made by developed sequential Monte Carlo algorithm, based on constructed fully Bayesian scheme. 
 
 
 
