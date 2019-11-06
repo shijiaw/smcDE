@@ -568,7 +568,7 @@ smcDE <- function(data, times, seed, knots, CESSthresholds, NP, resampleThreshol
       parameterList <- list(r = parameters[,1], P = parameters[,2], tau = parameters[,3])
 
 
-      return(list(c = c, parameters = parameterList, lambda = lambda, sigma = sigma, W = W))
+      return(list(c1 = c, c2 = NULL, parameters = parameterList, lambda = lambda, sigma = sigma, W = W))
     }
 
     # function for evaluating basis functions with new tau sampled
@@ -1247,7 +1247,7 @@ smcDE <- function(data, times, seed, knots, CESSthresholds, NP, resampleThreshol
     output <- DE3(data, times, seed, knots, CESSthresholds, NP, resampleThreshold, alambda, blambda, sigmac)
   }
 
-  return(list(c = output$c, parameters = output$parameters, lambda = output$lambda, sigma = output$sigma, W = output$W))
+  return(list(c1 = output$c1, c2 = output$c2, parameters = output$parameters, lambda = output$lambda, sigma = output$sigma, W = output$W))
 }
 
 
