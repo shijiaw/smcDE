@@ -38,4 +38,4 @@ Output
 
 Demo
 -----
-We refer users to Folder `Demo' for examples. 
+We refer users to Folder `Demo' for an example. 
