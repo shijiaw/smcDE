@@ -39,7 +39,7 @@ smcDE(
 
 \item{DEmodel}{options for DE models: 1 (ODE), 2 (DDE1), 3 (DDE2) in manuscript}
 
-\item{knotsPosition}{the location we put knots}
+\item{knots}{the location we put knots}
 }
 \description{
 This function estimate parameters in DEs via SMC based on collocation

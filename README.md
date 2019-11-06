@@ -6,7 +6,7 @@ An R package described in our manuscript ``Adaptive semiparametric Bayesian diff
 - seed: the random seeds for propagation and resampling in SMC
 - knots: the location we put knots
 - NP: the number of particles in SMC
-- CESSthresholds relative conditional effective sample size (0, 1) in SMC
+- CESSthresholds: relative conditional effective sample size (0, 1) in SMC
 - resampleThreshold: the threshold triggering resampling in SMC
 - alambda: hyper-parameter for tuning parameter lambda
 - blambda: hyper-parameter for tuning parameter lambda
