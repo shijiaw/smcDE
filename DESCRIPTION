@@ -1,14 +1,7 @@
 Package: smcDE
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: What license it uses
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 6.1.99.9001
+Type: Package
+Title: Adaptive semiparametric Bayesian differential equations via sequential Monte Carlo methods
+Version: 1.0
+Date:2019-10-20
+Authors: Shijia Wang 
+Maintainer: Shijia Wang <shijiaw@sfu.ca>
