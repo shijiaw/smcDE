@@ -1,6 +1,12 @@
 # smcDE
 An R package described in our manuscript ``Adaptive semiparametric Bayesian differential equations via sequential Monte Carlo methods''
 
+Installation
+------------
+install_github(``shijiaw/smcDE'')
+
+Input arguments
+-----
 - data: a list with each element being a trajectory with measurement error.
 - times: a list with each element being the time we record data.
 - seed: the random seeds for propagation and resampling in SMC.
