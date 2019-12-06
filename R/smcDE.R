@@ -788,6 +788,7 @@ smcDE <- function(data, times, seed, knots, CESSthresholds, NP, resampleThreshol
       y1 = data[[1]]
       y2 = data[[2]]
       times = times[[1]]
+      DDE_power = 8
       # set random seed for smc
       set.seed(seed)
 
