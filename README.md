@@ -38,4 +38,4 @@ Output
 
 Demo
 -----
-We refer users to Folder `Demo' for an example. 
+We refer users to Folder `Demos' for  examples. In `Demos', folder `Demo1' includes an example for ODE parameter estimation; folder `Demo2' includes an example for our first DDE example; folder `Demo3' includes an example for our second DDE example. 
