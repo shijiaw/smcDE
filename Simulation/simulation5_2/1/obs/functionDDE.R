@@ -114,15 +114,6 @@ c_logprior <- function(lambda, parameters, dw, w_delay, quadwts){
   P <- parameters[2]
   tau <- parameters[3]
   
-  # w <- D0quadbasismat%*%c
-  # dw <- D1quadbasismat%*%c
-  # 
-  # index <- min(which(quadpts >= tau))
-  # if(quadpts[index+1] > quadpts[index]){
-  #   w_delay <- c(rep(w[1], index), w[2:(nrow(D0quadbasismat)-index+1)])
-  # }else{
-  #   w_delay <- c(rep(w[1], index+1), w[2:(nrow(D0quadbasismat)-index)])
-  # }
   g <- r*(1-exp(w_delay)/(1000*P))
   
   rt <- -lambda*sum(quadwts*((dw-g)^2))
@@ -130,7 +121,7 @@ c_logprior <- function(lambda, parameters, dw, w_delay, quadwts){
 }
 
 MH_c <- function(c_priorOld, c_llOld, lambda, sigma, parameters, c, quadwts, tau_index, basismat, D0quadbasismat, D1quadbasismat, D0quadbasismat_delay, y, temperature){
-  #MHsigma <- 1
+
   newc <- c(rnorm(length(c), c, sigmac))
   
   ww <- basismat%*%newc
@@ -165,52 +156,13 @@ GB_lambda <- function(alambda, blambda, parameters, M, w, dw,  w_delay, quadwts,
   P <- parameters[2]
   tau <- parameters[3]
   
-  # w <- D0quadbasismat%*%c
-  # dw <- D1quadbasismat%*%c
-  # 
-  # index <- min(which(quadpts >= tau))
-  # if(quadpts[index+1] > quadpts[index]){
-  #   w_delay <- c(rep(w[1], index), w[2:(nrow(D0quadbasismat)-index+1)])
-  # }else{
-  #   w_delay <- c(rep(w[1], index+1), w[2:(nrow(D0quadbasismat)-index)])
-  # }
   g <- r*(1-exp(w_delay)/(1000*P))
   
-  #rt <- -lambda*sum(quadwts*((dw-g)^2))
-  #g1 <- 72/(36+x2) - abs(kappa1) 
-  #g2 <- kappa2*x1 - 1
   b_lambda <- 1/(1/blambda+temperature*sum(quadwts*((dw-g)^2))/2)
   return(rgamma(1, shape = alambda+temperature*M/2, scale = b_lambda))
 }
 
 
-# ##Gibbs move for c1 ###
-# GB_c1 <- function(lambda, sigma1, parameters, c1, c2, y1, temperature){
-#   mu_m <- parameters[1]
-#   mu_p <- parameters[2]
-#   p_0 <- parameters[3]
-#   tau <- parameters[4]
-#   
-#   VV <- diag(quadwts)
-#   dx1 <- D1quadbasismat%*%c1
-#   dx2 <- D1quadbasismat%*%c2
-#   x1 <- D0quadbasismat%*%c1
-#   x2 <- D0quadbasismat%*%c2
-#   
-#   index <- min(which(quadpts >= tau))
-#   if(quadpts[index+1] > quadpts[index]){
-#     x2_delay <- c(rep(x2[1], index), x2[2:(nrow(D0quadbasismat)-index+1)])
-#   }else{
-#     x2_delay <- c(rep(x2[1], index+1), x2[2:(nrow(D0quadbasismat)-index)])
-#   }
-#   #g1 <- 1/(1+(x2_delay/p_0)^DDE_power) - mu_m*x1 
-#   #g2 <- x1 - mu_p*x2
-# 
-#   SigInv <- temperature*(lambda/2*(t(D0quadbasismat)%*%VV%*%D0quadbasismat+t(D1quadbasismat+mu_m*D0quadbasismat)%*%VV%*%(D1quadbasismat+mu_m*D0quadbasismat))+ t(basismat)%*%basismat/(2*sigma1^2))
-#   Sig <- solve(SigInv)
-#   mu <- t(temperature*(lambda/2*(t(dx2+mu_p*x2)%*%VV%*%D0quadbasismat+t(1/(1+(x2_delay/p_0)^DDE_power))%*%VV%*%(D1quadbasismat+mu_m*D0quadbasismat))+t(y1)%*%basismat/(2*sigma1^2))%*%Sig)
-#   return(mvrnorm(n = 1, mu, Sig))
-# }
 
 ESS <- function(logW){
   logWmax <- max(logW)
@@ -219,9 +171,6 @@ ESS <- function(logW){
   #return(1/sum(w^2)/length(w))
 }
 
-# CESS <- function(w, W){
-#   return(length(w)*(sum(w*W))^2/(sum(W*w^2)))
-# }
 
 
 

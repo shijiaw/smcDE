@@ -212,11 +212,6 @@ ESS <- function(logW){
   #return(1/sum(w^2)/length(w))
 }
 
-# CESS <- function(w, W){
-#   return(length(w)*(sum(w*W))^2/(sum(W*w^2)))
-# }
-
-
 
 bisection <- function(f, a, b, W, logRatio, alphaCESS) {
   n = 1000
@@ -251,7 +246,6 @@ func <- function(W, logRatio, a, alphaCESS) {
   logw <- a*logRatio
   logmax = max(logw)
   w <- exp(logw - logmax)
-  #rt <- length(w)*(sum(w*W))^2/(sum(W*w^2))- alphaCESS
   rt <- (sum(w*W))^2/(sum(W*w^2))- alphaCESS
   return(rt)
 }

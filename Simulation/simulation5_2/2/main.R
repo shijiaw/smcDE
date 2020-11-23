@@ -12,7 +12,6 @@ library(MASS)
 
 NITER <- 1
 knotsNpoints <- 20
-#lambda <- 10
 NP <- 300
 lambda <- rgamma(NP, 1, 1)
 CESSthresholds <- 0.3

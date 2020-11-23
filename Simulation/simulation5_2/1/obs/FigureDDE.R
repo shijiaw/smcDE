@@ -9,8 +9,6 @@ mu_p_particles = abs(rnorm(NP, 0.04, 0.02))
 p_0_particles = rnorm(NP, 90, 20)
 tau_particles = rnorm(NP, 30, 10)
 
-#sigma1 <- sqrt(1/rgamma(NP, 1,1))
-#sigma2 <- sqrt(1/rgamma(NP, 1,1))
 
 sigma1 <- runif(NP, 0.3, 3)
 sigma2 <- runif(NP, 0.2, 8)

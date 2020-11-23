@@ -7,7 +7,7 @@ library(deSolve)
 library(NLRoot)
 library(Hmisc)
 
-#times <- seq(0, 100, 0.2)
+
 times <- seq(0, 100, 0.25)
 knots = seq(min(times), max(times),by=2)
 sigma1 <- 0.4
@@ -30,8 +30,6 @@ r_particles = abs(rnorm(NP, 1.2, 1))
 P_particles = abs(rnorm(NP, 2, 1))
 tau_particles = rnorm(NP, 2, 0.6)
 
-#sigma1 <- sqrt(1/rgamma(NP, 1,1))
-#sigma2 <- sqrt(1/rgamma(NP, 1,1))
 
 sigma <- runif(NP, 0.3, 5)
 
@@ -40,7 +38,7 @@ lambda <- (rgamma(NP, 1, 1))
 c_LSE <- solve(as.matrix(basismat2))%*%t(basismat)%*%log(y)
 
 
-#sum((output[,2]-basismat%*%c1_LSE)^2)
+
 double_quadpts <- table(quadpts)[which(table(quadpts) == 2)]
 
 
@@ -54,5 +52,5 @@ for(i in 1:NP){
 resampleThreshold <- 0.5
 
 source('functionDDE.R')
-source('reample.R')
+source('resample.R')
 source('asmcDDE.R')

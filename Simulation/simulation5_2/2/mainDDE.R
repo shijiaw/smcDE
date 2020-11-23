@@ -1,14 +1,4 @@
-#rm(list=ls())
-#library("fda")
-#library("MCMCpack")
-#library(numDeriv)
-#library(fda)
-#library(deSolve)
-#library(NLRoot)
-#library(smcUtils)
-#library(Hmisc)
 
-#times <- seq(0, 100, 0.2)
 times <- seq(0, 500, 5)
 sigma1 <- 1
 sigma2 <- 10
@@ -23,16 +13,11 @@ M <- nknots
 alambda <- 1
 blambda <- 1
 sigmac2 <- 1
-#CESSthresholds <- 0.8
-#NP <- 300
 
 mu_m_particles = abs(rnorm(NP, 0.04, 0.02))
 mu_p_particles = abs(rnorm(NP, 0.04, 0.02))
 p_0_particles = rnorm(NP, 90, 20)
 tau_particles = rnorm(NP, 30, 10)
-
-#sigma1 <- sqrt(1/rgamma(NP, 1,1))
-#sigma2 <- sqrt(1/rgamma(NP, 1,1))
 
 sigma1 <- runif(NP, 0.3, 3)
 sigma2 <- runif(NP, 0.2, 8)
@@ -42,7 +27,6 @@ lambda <- (rgamma(NP, 1, 1))
 c1_LSE <- solve(as.matrix(basismat2))%*%t(basismat)%*%y1
 c2_LSE <- solve(as.matrix(basismat2))%*%t(basismat)%*%y2
 
-#sum((output[,2]-basismat%*%c1_LSE)^2)
 double_quadpts <- table(quadpts)[which(table(quadpts) == 2)]
 
 ##optimize ###
@@ -71,11 +55,6 @@ objectiveFunction <- function(par, lambda){
   return(rt)
 }
 
-#par <- c(0.04, 0.04, 90, 25.0, c1_LSE, c2_LSE)
-#optimizer <- nlminb(start = par, objectiveFunction, control=list(trace=FALSE, abs.tol = 0.1, iter.max = 100), lambda = 1)
-#c1_LSE <- optimizer$par[3:((length(par))/2+1)]
-#c2_LSE <- optimizer$par[-(1:((length(par))/2+1))]
-
 c1 <- matrix(NA, nr = NP, nc = ncol(basismat))
 c2 <- matrix(NA, nr = NP, nc = ncol(basismat))
 
@@ -83,8 +62,6 @@ for(i in 1:NP){
   c1[i,] <- rnorm(length(c1_LSE), c1_LSE, 0.1)
   c2[i,] <- rnorm(length(c2_LSE), c2_LSE, 0.1)
 }
-
-#resampleThreshold <- 0.5
 
 source('functionDDE.R')
 source('asmcDDE.R')
