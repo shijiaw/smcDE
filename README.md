@@ -42,5 +42,5 @@ We refer users to Folder `Demos' for  examples. In `Demos', folder `Demo1' inclu
 
 Simulation
 -----
-The folder `Simulation' includes setups for simulation studies in manuscript. The results can be reproduced by running `main.R'.
+The folder 'Simulation' includes setups for simulation studies in manuscript. The results can be reproduced by running `main.R'.
 
