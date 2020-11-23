@@ -39,3 +39,8 @@ Output
 Demo
 -----
 We refer users to Folder `Demos' for  examples. In `Demos', folder `Demo1' includes an example for ODE parameter estimation; folder `Demo2' includes an example for our first DDE example; folder `Demo3' includes an example for our second DDE example. 
+
+Simulation
+-----
+The folder `Simulation' includes setups for simulation studies in manuscript. The results can be reproduced by running `main.R'.
+
